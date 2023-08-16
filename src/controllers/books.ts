@@ -67,10 +67,10 @@ export async function getBook(req: Request, res: Response) {
 export const updateBook = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const { name, url, description } = req.body;
+    const { title, url, description } = req.body;
 
     const book = await Book.findByPk(id);
-    book.title = name;
+    book.title = title;
     book.url = url;
     book.description = description;
     await book.save();
@@ -94,7 +94,7 @@ export async function deleteBook(req: Request, res: Response) {
         id,
       },
     });
-    return res.sendStatus(204);
+    return res.json({message: "book deleted"});
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
   }
