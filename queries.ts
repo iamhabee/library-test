@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 const Pool = require('pg').Pool;
 const pool = new Pool({
-  user: 'bookadmin',
-  host: 'books.c71wedqicqfd.us-east-1.rds.amazonaws.com',
-  database: 'books',
-  password: 'QAiq1abLHq7INt9HnibE',
+  user: '',
+  host: '',
+  database: '',
+  password: '',
   port: 5432,
 });
 
